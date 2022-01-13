@@ -1,0 +1,84 @@
+mydate=new Date();
+hours=mydate.getHours();
+min=mydate.getMinutes();
+sec=mydate.getSeconds();
+cn=document.getElementById("clock");
+function displayTime(){
+
+}
+// cn.innerText=hours+":"+min+":"+sec;
+clr=setInterval(function(){
+    sec+=1;
+    if(sec<10){
+        if(min<10){
+            if(hours<10){
+                cn.innerText="0"+hours+":0"+min+":0"+sec;
+            }
+            else{
+                cn.innerText=hours+":0"+min+":0"+sec;
+            }
+        }
+        else{
+            if(hours<10){
+                cn.innerText="0"+hours+":"+min+":0"+sec;
+            }
+            else{
+                cn.innerText=hours+":"+min+":0"+sec;
+            }
+        }
+    }
+    else if(sec>59){
+        min+=1;
+        sec=0;
+        if(min<10){
+            if(hours<10){
+                cn.innerText="0"+hours+":0"+min+":0"+sec;
+            }
+            else{
+                cn.innerText=hours+":0"+min+":0"+sec;
+            }
+        }
+        else if(min>59){
+            hours+=1
+            min=0;
+            sec=0;
+            if(hours<10){
+                cn.innerText="0"+hours+":0"+min+":0"+sec;
+            }
+            else if(hours>23){
+                hours=0;
+                cn.innerText=hours+":0"+min+":0"+sec;
+            }
+            else{
+                cn.innerText=hours+":0"+min+":0"+sec;
+            }
+        }
+        else{
+            sec=0;
+            if(hours<10){
+                cn.innerText="0"+hours+":"+min+":0"+sec;
+            }
+            else{
+                cn.innerText=hours+":"+min+":0"+sec;
+            }
+        }
+    }
+    else{
+        if(min<10){
+            if(hours<10){
+                cn.innerText="0"+hours+":0"+min+":"+sec;
+            }
+            else{
+                cn.innerText=hours+":0"+min+":"+sec;
+            }
+        }
+        else{
+            if(hours<10){
+                cn.innerText="0"+hours+":"+min+":"+sec;
+            }
+            else{
+                cn.innerText=hours+":"+min+":"+sec;
+            }
+        }
+    }
+},1000);
