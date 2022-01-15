@@ -3,10 +3,7 @@ hours=mydate.getHours();
 min=mydate.getMinutes();
 sec=mydate.getSeconds();
 cn=document.getElementById("clock");
-function displayTime(){
-
-}
-// cn.innerText=hours+":"+min+":"+sec;
+// cn.innerText=hours+":"+min+":"+sec;  Format of time diaplayed on the screen
 clr=setInterval(function(){
     sec+=1;
     if(sec<10){
